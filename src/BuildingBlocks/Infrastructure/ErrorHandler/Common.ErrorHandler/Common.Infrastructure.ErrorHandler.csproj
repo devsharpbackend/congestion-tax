@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+	
+	<ItemGroup>
+    
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.3" />
+		<PackageReference Include="System.Data.SqlClient" version="4.8.2" />
+	</ItemGroup>
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	  <Exec Command="if &quot;$(ConfigurationName)&quot; == &quot;Release&quot; (xcopy &quot;$(ProjectDir)\bin\Release\net7.0\Common.Infrastructure.ErrorHandler.dll&quot; &quot;..\..\..\ShareResources&quot; /S /R /K /V /I /F /C /Y)" />
+	</Target>
+</Project>
