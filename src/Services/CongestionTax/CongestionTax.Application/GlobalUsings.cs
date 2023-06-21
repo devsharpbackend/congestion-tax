@@ -1,0 +1,15 @@
+global using MediatR;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.Extensions.Logging;
+global using Serilog.Context;
+global using FluentValidation;
+global using Fintranet.Services.CongestionTax.Application.Behaviors;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using System.Reflection;
+global using Dapper;
+global using Fintranet.Services.CongestionTax.Contracts.Interfaces;
+global using Fintranet.BuildingBlocks.Common.SharedKernel.Extensions;
+global using Fintranet.BuildingBlocks.Common.Infrastructure.ErrorHandler;
+global using Fintranet.Services.CongestionTaxA.Application.Exceptions;
+global using Fintranet.BuildingBlocks.Common.Application.Models.Command;
