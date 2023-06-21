@@ -1,3 +1,4 @@
+
 namespace Fintranet.Services.CongestionTax.Infrastructure.Data;
 
 public class ApplicationDbContext : DbContext, IUnitOfWork, IApplicationDbContext
@@ -20,7 +21,7 @@ public class ApplicationDbContext : DbContext, IUnitOfWork, IApplicationDbContex
   protected override void OnModelCreating(ModelBuilder builder)
   {
     base.OnModelCreating(builder);
-    //builder.ApplyConfiguration(new GatewayScopeEntityTypeConfiguration());
+        builder.ApplyConfigurationsFromAssembly(typeof(CityEntityTypeConfiguration).Assembly);
    
     // Ignore Domain Event Property from mapping
     var ListEntityMaps = builder.Model.GetEntityTypes();

@@ -1,4 +1,3 @@
-
 namespace Fintranet.BuildingBlocks.Common.SharedKernel.Extensions;
 
 public static class AsyncEnumerableExtensions

@@ -7,8 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="AggregatesModel\CityAggregate\" />
-    <Folder Include="AggregatesModel\VehicleAggregate\" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\Domain\Common.SeedWork\Common.Domain.SeedWork.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>

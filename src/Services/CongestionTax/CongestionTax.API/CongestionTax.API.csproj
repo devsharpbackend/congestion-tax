@@ -36,6 +36,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\BuildingBlocks\Api\Common.Api\Common.Api.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\Infrastructure\Host\Common.Infrastructure.Host.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\Infrastructure\Logining\Common.Logging\Common.Infrastructure.Logging.csproj" />
     <ProjectReference Include="..\CongestionTax.Application\CongestionTax.Application.csproj" />
     <ProjectReference Include="..\CongestionTax.Infrastructure\CongestionTax.Infrastructure.csproj" />

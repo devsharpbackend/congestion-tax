@@ -17,3 +17,5 @@ global using Serilog;
 global using Fintranet.BuildingBlocks.Common.Api.Controllers;
 global using Fintranet.Services.CongestionTax.Infrastructure;
 global using Fintranet.BuildingBlocks.Common.Application;
+global using Fintranet.BuildingBlocks.Common.Infrastructure.Host;
+global using Fintranet.Services.CongestionTax.Contracts.Interfaces;

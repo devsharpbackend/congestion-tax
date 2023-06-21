@@ -30,13 +30,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\BuildingBlocks\Domain\Common.SeedWork\Common.Domain.SeedWork.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\SharedKernel\Common.SharedKernel.csproj" />
     <ProjectReference Include="..\CongestionTax.Contracts\CongestionTax.Contracts.csproj" />
     <ProjectReference Include="..\CongestionTax.Domain\CongestionTax.Domain.csproj" />
   </ItemGroup>
 
 
   <ItemGroup>
-    <Folder Include="EntityConfigurations\" />
     <Folder Include="Repositories\" />
   </ItemGroup>
 
