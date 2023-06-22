@@ -1,4 +1,5 @@
-﻿namespace Fintranet.Services.CongestionTax.Domain.Services;
+﻿
+namespace Fintranet.Services.CongestionTax.Domain.Services;
 
 public class CongestionTaxCalculatorService : ICongestionTaxCalculatorService
 {

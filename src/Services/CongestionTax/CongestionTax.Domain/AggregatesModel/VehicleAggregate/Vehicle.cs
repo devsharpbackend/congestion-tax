@@ -2,6 +2,7 @@ namespace Fintranet.Services.CongestionTax.Infrastructure.VehicleAggregate;
 
 public class Vehicle : Entity, IAggregateRoot
 {
+    private Vehicle() { }
     public Vehicle(string vehicleName) : base()
     {
         VehicleName = vehicleName.NotNullOrWhiteSpace();

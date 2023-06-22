@@ -1,4 +1,6 @@
 
+using FluentValidation;
+
 namespace Fintranet.Services.CongestionTax.API;
 
 public class Startup
@@ -72,7 +74,6 @@ public static class CustomExtensionMethods
 
   public static IServiceCollection AddValidation(this IServiceCollection services, IConfiguration configuration)
   {
-
     services.Configure<ApiBehaviorOptions>(options =>
     {
       options.ClientErrorMapping[404].Title = " Not Found Resource Or Api ";
@@ -94,7 +95,7 @@ public static class CustomExtensionMethods
         };
     });
 
-    services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+    services.AddValidatorsFromAssembly(typeof(ApplicationStartup).Assembly);
 
     services.AddFluentValidationAutoValidation(config =>
     {

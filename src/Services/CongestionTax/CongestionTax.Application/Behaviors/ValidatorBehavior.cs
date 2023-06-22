@@ -1,7 +1,4 @@
 
-
-using Fintranet.BuildingBlocks.Common.Application.Models.Command;
-
 namespace Fintranet.Services.CongestionTax.Application.Behaviors;
 
 public class ValidatorBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : IBaseCommand

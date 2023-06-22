@@ -1,5 +1,3 @@
-using Fintranet.BuildingBlocks.Common.Application;
-
 namespace Fintranet.Services.CongestionTax.Application;
 
 public static class ApplicationStartup
@@ -17,7 +15,6 @@ public static class CustomExtensionMethods
 {
   public static IServiceCollection AddCustomOptions(this IServiceCollection services, IConfiguration configuration)
   {
-
     services.Configure<AppSetting>(configuration);
     services.AddAutoMapper(Assembly.GetExecutingAssembly());
   
