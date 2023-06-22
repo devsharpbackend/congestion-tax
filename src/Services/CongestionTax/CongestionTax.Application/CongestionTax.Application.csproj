@@ -39,7 +39,6 @@
 
   <ItemGroup>
     <Folder Include="Features\ViewModel\" />
-    <Folder Include="Features\Validation\" />
   </ItemGroup>
   
 </Project>

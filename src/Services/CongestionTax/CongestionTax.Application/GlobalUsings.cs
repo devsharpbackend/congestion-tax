@@ -18,3 +18,4 @@ global using Fintranet.Services.CongestionTax.Domain.VehicleAggregate;
 global using Fintranet.BuildingBlocks.Common.Infrastructure.ErrorHandler.Exceptions;
 global using Fintranet.Services.CongestionTax.Infrastructure.VehicleAggregate;
 global using Fintranet.Services.CongestionTax.Domain.Services;
+global using Fintranet.Services.CongestionTax.Domain.Messages;
