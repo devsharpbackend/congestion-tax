@@ -37,6 +37,15 @@ namespace CongestionTax.Infrastructure.Migrations
                     b.Property<DateTimeOffset>("CreatedAt")
                         .HasColumnType("datetimeoffset");
 
+                    b.Property<decimal>("MaxCongestionTaxPerDay")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("NumberOfDaysBeforeHoliday")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SingleChargeIntervalInMinute")
+                        .HasColumnType("int");
+
                     b.Property<DateTimeOffset>("UpdatedAt")
                         .HasColumnType("datetimeoffset");
 

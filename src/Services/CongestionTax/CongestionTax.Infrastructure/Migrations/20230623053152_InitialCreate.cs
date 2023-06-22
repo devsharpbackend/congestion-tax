@@ -51,6 +51,9 @@ namespace CongestionTax.Infrastructure.Migrations
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false, defaultValueSql: "NEWID()"),
                     CityName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     WorkingCalendarId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    NumberOfDaysBeforeHoliday = table.Column<int>(type: "int", nullable: false),
+                    MaxCongestionTaxPerDay = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    SingleChargeIntervalInMinute = table.Column<int>(type: "int", nullable: false),
                     CreatedAt = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
                     UpdatedAt = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false)
                 },

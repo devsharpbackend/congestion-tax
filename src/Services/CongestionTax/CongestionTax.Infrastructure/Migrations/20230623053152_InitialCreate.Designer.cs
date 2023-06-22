@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CongestionTax.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230622214844_InitialCreate")]
+    [Migration("20230623053152_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -39,6 +39,15 @@ namespace CongestionTax.Infrastructure.Migrations
 
                     b.Property<DateTimeOffset>("CreatedAt")
                         .HasColumnType("datetimeoffset");
+
+                    b.Property<decimal>("MaxCongestionTaxPerDay")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("NumberOfDaysBeforeHoliday")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SingleChargeIntervalInMinute")
+                        .HasColumnType("int");
 
                     b.Property<DateTimeOffset>("UpdatedAt")
                         .HasColumnType("datetimeoffset");

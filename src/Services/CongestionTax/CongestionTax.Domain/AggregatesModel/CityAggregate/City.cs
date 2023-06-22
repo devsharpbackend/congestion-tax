@@ -6,10 +6,16 @@ public class City : Entity, IAggregateRoot
         _tariffs = new List<Tariff>();
         _vehicles = new List<CityVehicle>(); 
     }
-    public City(string cityName, WorkingCalendar workingCalendar) : base()
+    public City(string cityName, WorkingCalendar workingCalendar
+        , int numberOfDaysBeforeHoliday, decimal maxCongestionTaxPerDay,int singleChargeIntervalInMinute) : base()
     {
         workingCalendar.NotNull();
         CityName = cityName.NotNullOrWhiteSpace();
+
+        NumberOfDaysBeforeHoliday = numberOfDaysBeforeHoliday.NotNegative();
+        MaxCongestionTaxPerDay = maxCongestionTaxPerDay.NotNegative();
+        SingleChargeIntervalInMinute= singleChargeIntervalInMinute.NotNegative();
+
         SetWorkingCalendar(workingCalendar);
         _tariffs = new List<Tariff>();
         _vehicles = new List<CityVehicle>();
@@ -18,7 +24,13 @@ public class City : Entity, IAggregateRoot
     public string CityName { get; private set; }
     public string WorkingCalendarId { get; private set; }
 
+    // City Settings
+    public int NumberOfDaysBeforeHoliday { get; private set; }
+    public decimal MaxCongestionTaxPerDay { get; private set; }
+    public int SingleChargeIntervalInMinute { get; private set; }
 
+
+    // Navigations
     private List<CityVehicle> _vehicles;
     public IReadOnlyCollection<CityVehicle> Vehicles => _vehicles;
 

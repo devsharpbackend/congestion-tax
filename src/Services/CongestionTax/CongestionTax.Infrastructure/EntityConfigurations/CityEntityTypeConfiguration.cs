@@ -6,6 +6,7 @@ class CityEntityTypeConfiguration : IEntityTypeConfiguration<City>
     {
         builder.Property(x => x.Id).HasDefaultValueSql("NEWID()");
         builder.Property(p => p.CityName).IsRequired().HasMaxLength(255);
+        builder.Property(x => x.MaxCongestionTaxPerDay).HasColumnType("decimal(18,2)");
 
         builder.HasOne<WorkingCalendar>()
         .WithMany()

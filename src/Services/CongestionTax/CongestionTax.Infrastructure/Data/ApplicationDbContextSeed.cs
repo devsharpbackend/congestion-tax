@@ -8,7 +8,7 @@ public class ApplicationDbContextSeed : IApplicationDbContextSeed
 
     public async Task MigrateAndSeedAsync(IApplicationDbContext _context, ILogger<IApplicationDbContextSeed> logger)
     {
-        ApplicationDbContext context = _context as ApplicationDbContext;
+        ApplicationDbContext? context = _context as ApplicationDbContext;
         if (context == null)
             return;
 
@@ -72,7 +72,7 @@ public class ApplicationDbContextSeed : IApplicationDbContextSeed
         }
         IEnumerable<City> GetPredefinedCities()
         {
-            City city = new("Gothenburg", context.Set<WorkingCalendar>().FirstOrDefault());
+            City city = new("Gothenburg", context.Set<WorkingCalendar>().FirstOrDefault(), 2, 60, 60);
             // add Tariffs for Gothenburg City
             city.AddTariff(8, new TimeSpan(6, 0, 0), new TimeSpan(6, 29, 59));
             city.AddTariff(13, new TimeSpan(6, 30, 0), new TimeSpan(6, 59, 59));
@@ -86,12 +86,12 @@ public class ApplicationDbContextSeed : IApplicationDbContextSeed
             city.AddTariff(0, new TimeSpan(18, 30, 0), new TimeSpan(5, 59, 59));
 
             city.AddVehicle(context.Set<Vehicle>().FirstOrDefault(p => p.VehicleName == "Motorcycle"), false);
-            city.AddVehicle(context.Set<Vehicle>().FirstOrDefault(p => p.VehicleName == "Tractor"), false);
-            city.AddVehicle(context.Set<Vehicle>().FirstOrDefault(p => p.VehicleName == "Emergency"), false);
+            city.AddVehicle(context.Set<Vehicle>().FirstOrDefault(p => p.VehicleName == "Tractor"), true);
+            city.AddVehicle(context.Set<Vehicle>().FirstOrDefault(p => p.VehicleName == "Emergency"), true);
             city.AddVehicle(context.Set<Vehicle>().FirstOrDefault(p => p.VehicleName == "Diplomat"), false);
             city.AddVehicle(context.Set<Vehicle>().FirstOrDefault(p => p.VehicleName == "Foreign"), true);
             city.AddVehicle(context.Set<Vehicle>().FirstOrDefault(p => p.VehicleName == "Military"), false);
-            city.AddVehicle(context.Set<Vehicle>().FirstOrDefault(p => p.VehicleName == "Personal"), true);
+            city.AddVehicle(context.Set<Vehicle>().FirstOrDefault(p => p.VehicleName == "Personal"), false);
 
 
 
