@@ -1,4 +1,4 @@
-namespace Fintranet.Services.CongestionTax.Domain.CityAggregate;
+namespace Fintranet.Services.CongestionTax.Domain.WorkingCalendarAggregate;
 
 public class WorkingCalendar : Entity, IAggregateRoot
 {

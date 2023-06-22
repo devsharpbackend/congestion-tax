@@ -5,3 +5,4 @@ global using Fintranet.Services.CongestionTax.Infrastructure.Exceptions;
 global using Fintranet.BuildingBlocks.Common.Domain.SeedWork;
 global using Fintranet.Services.CongestionTax.Domain.Seedwork;
 global using Fintranet.Services.CongestionTax.Infrastructure.VehicleAggregate;
+global using Fintranet.Services.CongestionTax.Domain.WorkingCalendarAggregate;

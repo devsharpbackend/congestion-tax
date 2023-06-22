@@ -3,9 +3,8 @@ namespace Fintranet.Services.CongestionTax.Domain.CityAggregate;
 public class Tariff : Entity
 {
     private Tariff() { }
-    public Tariff(string cityId, decimal charge, TimeSpan fromTime, TimeSpan toTime)
+    public Tariff( decimal charge, TimeSpan fromTime, TimeSpan toTime)
     {
-        CityId = cityId.NotNullOrWhiteSpace();
         Charge = charge.NotNegative();
         FromTime = fromTime;
         ToTime = toTime;

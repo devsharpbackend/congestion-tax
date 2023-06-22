@@ -26,3 +26,6 @@ global using Microsoft.EntityFrameworkCore.Metadata.Builders;
 global using Fintranet.Services.CongestionTax.Infrastructure.VehicleAggregate;
 global using Fintranet.Services.CongestionTax.Infrastructure.EntityConfigurations;
 global using Fintranet.BuildingBlocks.Common.SharedKernel.Extensions;
+global using Fintranet.Services.CongestionTax.Domain.VehicleAggregate;
+global using Fintranet.Services.CongestionTax.Domain.WorkingCalendarAggregate;
+global using Fintranet.Services.CongestionTax.Infrastructure.Repositories;

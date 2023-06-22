@@ -2,10 +2,9 @@ namespace Fintranet.Services.CongestionTax.Domain.CityAggregate;
 
 public class CityVehicle
 {
-    public CityVehicle(string vehicleId, string cityId, bool isTollFree)
+    public CityVehicle(string vehicleId, bool isTollFree)
     {
         VehicleId = vehicleId.NotNullOrWhiteSpace();
-        CityId = cityId.NotNullOrWhiteSpace() ;
         IsTollFree = isTollFree;
     }
 

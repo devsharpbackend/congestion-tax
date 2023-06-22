@@ -8,18 +8,9 @@ public class City : Entity, IAggregateRoot
     }
     public City(string cityName, WorkingCalendar workingCalendar) : base()
     {
-        if (workingCalendar.StartDate.Year != 2013)
-        {
-            throw new CongestionTaxDomainException("Working calendar must be for the year 2013.");
-        }
-        if (workingCalendar.EndDate.Year != 2013)
-        {
-            throw new CongestionTaxDomainException("Working calendar must be for the year 2013.");
-        }
-
-        workingCalendar.NotNull(cityName);
+        workingCalendar.NotNull();
         CityName = cityName.NotNullOrWhiteSpace();
-        WorkingCalendarId = workingCalendar.Id;
+        SetWorkingCalendar(workingCalendar);
         _tariffs = new List<Tariff>();
         _vehicles = new List<CityVehicle>();
     }
@@ -31,21 +22,23 @@ public class City : Entity, IAggregateRoot
     private List<CityVehicle> _vehicles;
     public IReadOnlyCollection<CityVehicle> Vehicles => _vehicles;
 
-
     private List<Tariff> _tariffs;
     public IReadOnlyCollection<Tariff> Tariffs => _tariffs;
 
-
-    // Domain Services List for Vehicles Managment
+    // Domain Services List for Vehicles Management
     public void AddVehicle(Vehicle vehicle, bool isTollFree)
     {
         vehicle.NotNull();
         CityVehicle? cityVehicle = Vehicles.FirstOrDefault(v => v.VehicleId == vehicle.Id);
         if (cityVehicle == null)
         {
-            _vehicles.Add(new CityVehicle(vehicle.Id, this.Id,isTollFree));
+            _vehicles.Add(new CityVehicle(vehicle.Id,isTollFree));
         }
-        throw new CongestionTaxDomainException("This vehicle is already registered");
+        else
+        {
+            throw new CongestionTaxDomainException("This vehicle is already registered");
+        }
+        
     }
     public void RemoveVehicle(Vehicle vehicle)
     {
@@ -55,12 +48,16 @@ public class City : Entity, IAggregateRoot
         {
             _vehicles.Remove(cityVehicle);
         }
-        throw new CongestionTaxDomainException("This vehicle does not exist for deletion");
+        else
+        {
+            throw new CongestionTaxDomainException("This vehicle does not exist for deletion");
+        }
+       
     }
 
     public bool IsVehicleTollFree(Vehicle vehicle)=> _vehicles.Any(p=>p.IsTollFree && p.VehicleId == vehicle.Id);
 
-    // Domain Services List for Tariffs Managment
+    // Domain Services List for Tariffs Management
     public void AddTariff(decimal charge, TimeSpan fromTime, TimeSpan toTime)
     {
         // check isOverlap
@@ -68,9 +65,13 @@ public class City : Entity, IAggregateRoot
 
         if (tariff == null)
         {
-            _tariffs.Add(new Tariff(this.Id,charge,fromTime,toTime));
+            _tariffs.Add(tariff ?? new Tariff(charge,fromTime,toTime));
         }
-        throw new CongestionTaxDomainException("This tariff In this range is already registered");
+        else
+        {
+            throw new CongestionTaxDomainException("This tariff In this range is already registered");
+        }
+        
     }
     public void RemoveTariff(TimeSpan fromTime, TimeSpan toTime)
     {
@@ -79,8 +80,12 @@ public class City : Entity, IAggregateRoot
         {
             _tariffs.Remove(tariff);
         }
-        throw new CongestionTaxDomainException("This tariff  In this range  does not exist for deletion");
+        else
+        {
+            throw new CongestionTaxDomainException("This tariff  In this range  does not exist for deletion");
+        }
     }
+       
 
     public decimal GetChargeTariff(TimeSpan fromTime, TimeSpan toTime)
     {
@@ -95,5 +100,18 @@ public class City : Entity, IAggregateRoot
     {
         _tariffs.Clear();
     }
-}
 
+    // Domain Services for WorkingCalendar Management
+    public void SetWorkingCalendar(WorkingCalendar workingCalendar)
+    {
+        if (workingCalendar.StartDate.Year != 2013)
+        {
+            throw new CongestionTaxDomainException("Working calendar must be for the year 2013.");
+        }
+        if (workingCalendar.EndDate.Year != 2013)
+        {
+            throw new CongestionTaxDomainException("Working calendar must be for the year 2013.");
+        }
+        WorkingCalendarId = workingCalendar.Id;
+    }
+}

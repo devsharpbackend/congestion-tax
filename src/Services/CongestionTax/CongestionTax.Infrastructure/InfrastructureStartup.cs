@@ -1,4 +1,3 @@
-
 namespace Fintranet.Services.CongestionTax.Infrastructure;
 
 public static class InfrastructureStartup
@@ -29,14 +28,14 @@ public static class InfrastructureStartup
   }
   public static IServiceCollection AddCustomOptions(this IServiceCollection services, IConfiguration configuration)
   {
-    // Add  Error Handler 
+    // Add Error Handler 
     services.AddScoped<ICongestionTaxErrorHandler, CongestionTaxErrorHandler>();
     services.AddCommonErrorHandler(configuration);
 
     // Add Repository
-    //services.AddScoped<IGatewayScopeRepository, GatewayScopeRepository>();
-    //services.AddScoped<IClusterScopeRepository, ClusterScopeRepository>();
-    //services.AddScoped<IRateLimitingPolicyRepository, RateLimitingPolicyRepository>();
+    services.AddScoped<ICityRepository, CityRepository>();
+    services.AddScoped<IVehicleRepository, VehicleRepository>();
+    services.AddScoped<IWorkingCalendarRepository, WorkingCalendarRepository>();
 
     services.AddScoped<IApplicationDbContextSeed, ApplicationDbContextSeed>();
     return services;
