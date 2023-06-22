@@ -10,8 +10,4 @@
     <ProjectReference Include="..\..\..\BuildingBlocks\Domain\Common.SeedWork\Common.Domain.SeedWork.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-
 </Project>
