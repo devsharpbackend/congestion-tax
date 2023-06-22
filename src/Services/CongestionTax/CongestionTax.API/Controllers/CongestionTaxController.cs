@@ -20,7 +20,7 @@ public class CongestionTaxController : ApiAdminController
     [ProducesDefaultResponseType]
     public async Task<IActionResult> CalculateCongestionTax(CalculateCongestionTaxCommand command)
     {
-        return Ok(_mediator.Send(command));
+        return Ok(await _mediator.Send(command));
     }
 
     

@@ -101,7 +101,7 @@ namespace CongestionTax.Infrastructure.Migrations
                     b.ToTable("Tariff");
                 });
 
-            modelBuilder.Entity("Fintranet.Services.CongestionTax.Domain.CityAggregate.WorkingCalendar", b =>
+            modelBuilder.Entity("Fintranet.Services.CongestionTax.Domain.WorkingCalendarAggregate.WorkingCalendar", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -113,6 +113,10 @@ namespace CongestionTax.Infrastructure.Migrations
 
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("date");
+
+                    b.Property<int>("HolidaysMonth")
+                        .HasColumnType("int")
+                        .HasColumnName("HolidaysMonth");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("date");
@@ -163,7 +167,7 @@ namespace CongestionTax.Infrastructure.Migrations
 
             modelBuilder.Entity("Fintranet.Services.CongestionTax.Domain.CityAggregate.City", b =>
                 {
-                    b.HasOne("Fintranet.Services.CongestionTax.Domain.CityAggregate.WorkingCalendar", null)
+                    b.HasOne("Fintranet.Services.CongestionTax.Domain.WorkingCalendarAggregate.WorkingCalendar", null)
                         .WithMany()
                         .HasForeignKey("WorkingCalendarId");
                 });

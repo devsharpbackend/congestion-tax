@@ -6,17 +6,24 @@ public class WorkingCalendar : Entity, IAggregateRoot
     public WorkingCalendar(string workingCalendarName, DateOnly startDate, DateOnly endDate) : base()
     {
         WorkingCalendarName = workingCalendarName.NotNullOrWhiteSpace();
+
         SetWorkingDays(DaysOfWeek.Monday | DaysOfWeek.Tuesday | DaysOfWeek.Wednesday | DaysOfWeek.Thursday | DaysOfWeek.Friday);
+
+        SetHolidaysMonth(MonthsOfYear.July);
+        // Initialization
         _holidays = new List<DateOnly>();
         StartDate = startDate;
         EndDate = endDate;
     }
 
     public string WorkingCalendarName { get; private set; }
-    public List<DateOnly> _holidays;
 
+    public List<DateOnly> _holidays;
     public IReadOnlyCollection<DateOnly> Holidays => _holidays;
+
     public DaysOfWeek WorkingDays { get; private set; }
+
+    public MonthsOfYear HolidaysMonth { get; private set; }
 
     public DateOnly StartDate { get; set; }
     public DateOnly EndDate { get; set; }
@@ -26,7 +33,10 @@ public class WorkingCalendar : Entity, IAggregateRoot
     {
         this.WorkingDays = workingDays;
     }
-
+    public void SetHolidaysMonth(MonthsOfYear holidaysMonth)
+    {
+        this.HolidaysMonth = holidaysMonth;
+    }
     public void AddHoliday(DateOnly date)
     {
         if (_holidays.Contains(date))
@@ -57,6 +67,27 @@ public class WorkingCalendar : Entity, IAggregateRoot
             case DayOfWeek.Friday: { result = (WorkingDays & DaysOfWeek.Friday) == DaysOfWeek.Friday; break; };
             case DayOfWeek.Saturday: { result = (WorkingDays & DaysOfWeek.Saturday) == DaysOfWeek.Saturday; break; };
             case DayOfWeek.Sunday: { result = (WorkingDays & DaysOfWeek.Sunday) == DaysOfWeek.Sunday; break; };
+        }
+
+        return result;
+    }
+    public bool IsMonthInHolidaysMonth(DateOnly date)
+    {
+        bool result = false;
+        switch (date.Month)
+        {
+            case 1: { result = (HolidaysMonth & MonthsOfYear.January) == MonthsOfYear.January; break; }
+            case 2: { result = (HolidaysMonth & MonthsOfYear.February) == MonthsOfYear.February; break; }
+            case 3: { result = (HolidaysMonth & MonthsOfYear.March) == MonthsOfYear.March; break; }
+            case 4: { result = (HolidaysMonth & MonthsOfYear.April) == MonthsOfYear.April; break; }
+            case 5: { result = (HolidaysMonth & MonthsOfYear.May) == MonthsOfYear.May; break; };
+            case 6: { result = (HolidaysMonth & MonthsOfYear.June) == MonthsOfYear.June; break; }
+            case 7: { result = (HolidaysMonth & MonthsOfYear.July) == MonthsOfYear.July; break; }
+            case 8: { result = (HolidaysMonth & MonthsOfYear.August) == MonthsOfYear.August; break; }
+            case 9: { result = (HolidaysMonth & MonthsOfYear.September) == MonthsOfYear.September; break; }
+            case 10: { result = (HolidaysMonth & MonthsOfYear.October) == MonthsOfYear.October; break; }
+            case 11: { result = (HolidaysMonth & MonthsOfYear.November) == MonthsOfYear.November; break; }
+            case 12: { result = (HolidaysMonth & MonthsOfYear.December) == MonthsOfYear.December; break; }
         }
 
         return result;

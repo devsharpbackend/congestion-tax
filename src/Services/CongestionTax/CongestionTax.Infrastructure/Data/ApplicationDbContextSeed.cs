@@ -32,7 +32,7 @@ public class ApplicationDbContextSeed : IApplicationDbContextSeed
                 await context.SaveChangesAsync();
             }
 
-           
+
         }
         catch (Exception ex)
         {

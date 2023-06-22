@@ -18,12 +18,10 @@ public class VehicleRepository : IVehicleRepository
     public async Task<Vehicle?> GetById(string id)=> await _context.Set<Vehicle>()
     .SingleOrDefaultAsync(p=>p.Id==id);
 
-    public async Task<Vehicle> GetByVehicleName(string vehicleName)
-    {
-       var x= await _context.Set<Vehicle>().SingleOrDefaultAsync(p => p.VehicleName.Contains(vehicleName));
+    public async Task<Vehicle> GetByVehicleName(string vehicleName)=>
+        await _context.Set<Vehicle>().SingleOrDefaultAsync(p => p.VehicleName.Contains(vehicleName));
 
-        return x;
-    }
+
        
 
     public void Remove(Vehicle vehicle) => _context.Set<Vehicle>().Remove(vehicle);

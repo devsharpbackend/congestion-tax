@@ -36,6 +36,10 @@ class WorkingCalendarEntityTypeConfiguration : IEntityTypeConfiguration<WorkingC
             .HasConversion<int>()
             .HasColumnName("WorkingDays");
 
+        builder.Property(e => e.HolidaysMonth)
+           .HasConversion<int>()
+           .HasColumnName("HolidaysMonth");
+
         builder.Ignore(b => b.DomainEvents);
     }
 }

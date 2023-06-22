@@ -32,6 +32,7 @@ namespace CongestionTax.Infrastructure.Migrations
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false, defaultValueSql: "NEWID()"),
                     WorkingCalendarName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     WorkingDays = table.Column<int>(type: "int", nullable: false),
+                    HolidaysMonth = table.Column<int>(type: "int", nullable: false),
                     StartDate = table.Column<DateTime>(type: "date", nullable: false),
                     EndDate = table.Column<DateTime>(type: "date", nullable: false),
                     Holidays = table.Column<string>(type: "nvarchar(max)", nullable: true),
