@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\BuildingBlocks\Domain\Common.SeedWork\Common.Domain.SeedWork.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\SharedKernel\Common.SharedKernel.csproj" />
   </ItemGroup>
 
 </Project>

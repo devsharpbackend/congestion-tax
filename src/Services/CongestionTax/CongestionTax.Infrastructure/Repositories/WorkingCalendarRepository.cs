@@ -1,4 +1,3 @@
-
 namespace Fintranet.Services.CongestionTax.Infrastructure.Repositories;
 
 public class WorkingCalendarRepository : IWorkingCalendarRepository
@@ -6,7 +5,7 @@ public class WorkingCalendarRepository : IWorkingCalendarRepository
     private readonly ApplicationDbContext _context;
     private readonly ILogger<VehicleRepository> _logger;
 
-    public WorkingCalendarRepository(ApplicationDbContext context,  ILogger<VehicleRepository> logger)
+    public WorkingCalendarRepository(ApplicationDbContext context, ILogger<VehicleRepository> logger)
     {
         _context = context ?? throw new ArgumentNullException(nameof(context));
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));

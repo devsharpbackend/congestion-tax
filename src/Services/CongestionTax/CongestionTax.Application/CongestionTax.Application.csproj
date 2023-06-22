@@ -34,6 +34,12 @@
     <ProjectReference Include="..\..\..\BuildingBlocks\Application\Common.Application\Common.Application.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\SharedKernel\Common.SharedKernel.csproj" />
     <ProjectReference Include="..\CongestionTax.Contracts\CongestionTax.Contracts.csproj" />
+    <ProjectReference Include="..\CongestionTax.Domain\CongestionTax.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\ViewModel\" />
+    <Folder Include="Features\Validation\" />
   </ItemGroup>
   
 </Project>

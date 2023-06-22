@@ -7,4 +7,9 @@ public class Vehicle : Entity, IAggregateRoot
         VehicleName = vehicleName.NotNullOrWhiteSpace();
     }
     public string VehicleName { get; private set; }
+
+    public String GetVehicleType()
+    {
+        return VehicleName;
+    }
 }

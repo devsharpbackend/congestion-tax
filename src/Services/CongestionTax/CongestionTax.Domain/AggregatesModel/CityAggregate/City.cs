@@ -87,9 +87,9 @@ public class City : Entity, IAggregateRoot
     }
        
 
-    public decimal GetChargeTariff(TimeSpan fromTime, TimeSpan toTime)
+    public decimal GetChargeTariff(TimeSpan time)
     {
-        Tariff? tariff = Tariffs.FirstOrDefault(t => fromTime < t.ToTime && toTime > t.FromTime);
+        Tariff? tariff = Tariffs.FirstOrDefault(t => t.ToTime>= time && t.FromTime<=time);
         if (tariff != null)
         {
             return tariff.Charge;

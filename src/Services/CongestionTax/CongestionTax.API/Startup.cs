@@ -1,3 +1,4 @@
+
 namespace Fintranet.Services.CongestionTax.API;
 
 public class Startup
@@ -107,7 +108,7 @@ public static class CustomExtensionMethods
 
     services.AddControllers((options) =>
     {
-     // options.Filters.Add(typeof(HttpGlobalExceptionFilter));
+      options.Filters.Add(typeof(HttpGlobalExceptionFilter));
     })
     .AddJsonOptions(options =>
     {
@@ -133,9 +134,9 @@ public static class CustomExtensionMethods
     {
       c.SwaggerDoc("v1", new OpenApiInfo
       {
-        Title = "IHO - IHO CongestionTax.API HTTP API",
+        Title = "Fintranet - Fintranet CongestionTax.API HTTP API",
         Version = "v1",
-        Description = "The IHO Microservice HTTP API. This is a Data-Driven/CRUD microservice sample"
+        Description = "The Fintranet Microservice HTTP API. This is a Data-Driven/CRUD microservice sample"
       });
       c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
       {

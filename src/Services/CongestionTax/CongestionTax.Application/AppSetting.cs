@@ -1,4 +1,4 @@
-namespace Fintranet.BuildingBlocks.Common.Application;
+namespace Fintranet.Services.CongestionTax.Application;
 
 public class AppSetting
 {

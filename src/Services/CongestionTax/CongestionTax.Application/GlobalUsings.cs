@@ -13,3 +13,8 @@ global using Fintranet.BuildingBlocks.Common.SharedKernel.Extensions;
 global using Fintranet.BuildingBlocks.Common.Infrastructure.ErrorHandler;
 global using Fintranet.Services.CongestionTaxA.Application.Exceptions;
 global using Fintranet.BuildingBlocks.Common.Application.Models.Command;
+global using Fintranet.Services.CongestionTax.Domain.CityAggregate;
+global using Fintranet.Services.CongestionTax.Domain.VehicleAggregate;
+global using Fintranet.BuildingBlocks.Common.Infrastructure.ErrorHandler.Exceptions;
+global using Fintranet.Services.CongestionTax.Infrastructure.VehicleAggregate;
+global using Fintranet.Services.CongestionTax.Domain.Services;

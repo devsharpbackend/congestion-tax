@@ -1,5 +1,5 @@
 
-namespace Fintranet.Services.Gateway.Infrastructure;
+namespace Fintranet.Services.CongestionTax.Infrastructure;
 
 public static class MediatorExtension
 {

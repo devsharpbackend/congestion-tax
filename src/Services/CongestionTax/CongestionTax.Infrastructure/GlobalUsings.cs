@@ -29,3 +29,4 @@ global using Fintranet.BuildingBlocks.Common.SharedKernel.Extensions;
 global using Fintranet.Services.CongestionTax.Domain.VehicleAggregate;
 global using Fintranet.Services.CongestionTax.Domain.WorkingCalendarAggregate;
 global using Fintranet.Services.CongestionTax.Infrastructure.Repositories;
+global using Fintranet.Services.CongestionTax.Domain.Services;

@@ -1,4 +1,6 @@
-namespace Fintranet.BuildingBlocks.Common.Application;
+using Fintranet.BuildingBlocks.Common.Application;
+
+namespace Fintranet.Services.CongestionTax.Application;
 
 public static class ApplicationStartup
 {
