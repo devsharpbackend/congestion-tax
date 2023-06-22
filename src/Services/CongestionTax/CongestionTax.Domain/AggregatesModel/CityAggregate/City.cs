@@ -4,7 +4,7 @@ public class City : Entity, IAggregateRoot
 {
     private City() {
         _tariffs = new List<Tariff>();
-        _vehicles = new List<CityVehicle>();
+        _vehicles = new List<CityVehicle>(); 
     }
     public City(string cityName, WorkingCalendar workingCalendar) : base()
     {
