@@ -3,11 +3,9 @@ namespace Fintranet.Services.CongestionTax.Domain.WorkingCalendarAggregate;
 public class WorkingCalendar : Entity, IAggregateRoot
 {
     private WorkingCalendar() { }
-    public WorkingCalendar(string workingCalendarName, DateOnly startDate, DateOnly endDate ) : base()
+    public WorkingCalendar(string workingCalendarName, DateOnly startDate, DateOnly endDate) : base()
     {
         WorkingCalendarName = workingCalendarName.NotNullOrWhiteSpace();
-      
-
 
         SetWorkingDays(DaysOfWeek.Monday | DaysOfWeek.Tuesday | DaysOfWeek.Wednesday | DaysOfWeek.Thursday | DaysOfWeek.Friday);
 
@@ -27,10 +25,10 @@ public class WorkingCalendar : Entity, IAggregateRoot
 
     public MonthsOfYear HolidaysMonth { get; private set; }
 
-    public DateOnly StartDate { get;private set; }
+    public DateOnly StartDate { get; private set; }
     public DateOnly EndDate { get; private set; }
 
-   
+
 
     // Domain Services
     public void SetWorkingDays(DaysOfWeek workingDays)
@@ -58,7 +56,8 @@ public class WorkingCalendar : Entity, IAggregateRoot
         _holidays.Remove(date);
     }
 
-    public bool IsDateInHolidays(DateOnly date) => _holidays.Any(p => p == date);
+    public bool IsDateInHolidays(DateOnly date)=> _holidays.Any(p => p == date);
+
     public bool IsDateInWorkingDays(DateOnly date)
     {
         bool result = false;

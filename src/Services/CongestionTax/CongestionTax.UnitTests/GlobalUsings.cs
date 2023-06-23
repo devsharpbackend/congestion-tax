@@ -4,3 +4,4 @@ global using System;
 global using Xunit;
 global using Fintranet.Services.CongestionTax.Infrastructure.Exceptions;
 global using CongestionTax.Domain.UnitTest;
+global using Fintranet.Services.CongestionTax.Domain.CityAggregate;
