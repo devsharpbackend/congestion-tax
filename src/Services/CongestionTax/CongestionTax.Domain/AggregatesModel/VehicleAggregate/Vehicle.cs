@@ -13,4 +13,6 @@ public class Vehicle : Entity, IAggregateRoot
     {
         return VehicleName;
     }
+    
+   
 }

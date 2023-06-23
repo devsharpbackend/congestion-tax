@@ -21,7 +21,7 @@ public class CityBuilder
     public CityBuilder()
     {
         WorkingCalendar workingCalendar = new("GothenburgWorkingCalendar", new DateOnly(2013, 1, 1), new DateOnly(2013, 12, 28));
-       City city = new("Gothenburg", workingCalendar, 2, 60, 60);
+        city = new("Gothenburg", workingCalendar, 2, 60, 60);
     }
     public CityBuilder AddTariff(decimal charge, TimeSpan fromTime, TimeSpan toTime)
     {

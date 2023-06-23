@@ -37,4 +37,32 @@ public class WorkingCalendarAggregateTest
         //Act - Assert
         Assert.False(workingCalendar.IsMonthInHolidaysMonth(date));
     }
+    [Fact]
+    public void Invalid_IsHoliday()
+    {
+        // set HolidaysMonth
+        WorkingCalendar workingCalendar = new WorkingCalendarBuilder()
+            .AddHoliday(new DateOnly(2013, 2, 28))
+            .Build();
+
+        // this date is Wednesday
+        DateOnly date = new(2013, 5, 1);
+
+        //Act - Assert
+        Assert.False(workingCalendar.IsDateInHolidays(date));
+    }
+    [Fact]
+    public void valid_IsBeforDaysInHoliday()
+    {
+        // set HolidaysMonth
+        WorkingCalendar workingCalendar = new WorkingCalendarBuilder()
+            .AddHoliday(new DateOnly(2013, 2, 28))
+            .Build();
+
+        // this date is Wednesday
+        DateOnly date = new(2013, 2, 27);
+
+        //Act - Assert
+        Assert.True(workingCalendar.IsDateInBeforeHolidays(date,3));
+    }
 }

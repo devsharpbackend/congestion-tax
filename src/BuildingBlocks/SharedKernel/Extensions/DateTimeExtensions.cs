@@ -1,4 +1,5 @@
-﻿namespace Fintranet.BuildingBlocks.Common.SharedKernel.Extensions;
+﻿
+namespace Fintranet.BuildingBlocks.Common.SharedKernel.Extensions;
 
 public static class DateTimeExtensions
 {
@@ -28,5 +29,20 @@ public static class DateTimeExtensions
         }
 
         return clusters;
+    }
+
+    public static DateTime[] ToDateTimeArray(this IEnumerable<string> dateStrings, string format)
+    {
+        List<DateTime> dates = new List<DateTime>();
+
+        foreach (string dateString in dateStrings)
+        {
+            if (DateTime.TryParseExact(dateString, format, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime date))
+            {
+                dates.Add(date);
+            }
+        }
+
+        return dates.ToArray();
     }
 }

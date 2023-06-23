@@ -56,8 +56,31 @@ public class WorkingCalendar : Entity, IAggregateRoot
         _holidays.Remove(date);
     }
 
-    public bool IsDateInHolidays(DateOnly date)=> _holidays.Any(p => p == date);
+    public bool IsDateInHolidays(DateOnly date) => _holidays.Any(p => p == date);
 
+    public bool IsDateInBeforeHolidays(DateOnly date, int NumberOfDaysBeforeHoliday)
+    {
+
+        bool isWithinRange = false;
+
+        foreach (var item in _holidays)
+        {
+            for (var i = 1; i <= NumberOfDaysBeforeHoliday; i++)
+            {
+                var tempDate = item.AddDays(-i);
+                if (date == tempDate)
+                {
+                    isWithinRange = true;
+                    break;
+                }
+            }
+        }
+
+       
+
+        return isWithinRange;
+
+    }
     public bool IsDateInWorkingDays(DateOnly date)
     {
         bool result = false;

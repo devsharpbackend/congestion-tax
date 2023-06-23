@@ -108,7 +108,7 @@ public class CongestionTaxCalculatorService : ICongestionTaxCalculatorService
         bool IsTollFree(DateTime date)
         {
             return workingCalendar.IsDateInHolidays(date.ToDateOnly()) // check for holidays
-                || workingCalendar.IsDateInHolidays(date.AddDays(-city.NumberOfDaysBeforeHoliday).ToDateOnly()) // check for days before a public holiday
+                || workingCalendar.IsDateInBeforeHolidays(date.ToDateOnly(), city.NumberOfDaysBeforeHoliday) // check for days before a public holiday
                 || workingCalendar.IsMonthInHolidaysMonth(date.ToDateOnly()) // check for Holidays Month
                 || !workingCalendar.IsDateInWorkingDays(date.ToDateOnly()); // check for is not WorkingDays -- for weekends
 
