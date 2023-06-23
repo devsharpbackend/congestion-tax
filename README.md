@@ -18,7 +18,6 @@ Since all business rules have been implemented independently in the Domain layer
  In order to maintain clean code, numerous Building Blocks have been created, which have resulted in code cleanliness.
 
 Execution:
-
 To execute, you need to have SQL Server installed and set the password for the "sa" user as "123123". Then run the project, and the migrations will be performed automatically.
 
 
