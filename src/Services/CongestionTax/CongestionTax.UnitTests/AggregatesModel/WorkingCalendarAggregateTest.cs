@@ -4,8 +4,6 @@ public class WorkingCalendarAggregateTest
 {
     public WorkingCalendarAggregateTest()
     { }
-
-
     [Fact]
     public void Invalid_IsDateInWorkingDays()
     {
@@ -20,8 +18,6 @@ public class WorkingCalendarAggregateTest
         //Act - Assert
         Assert.False( workingCalendar.IsDateInWorkingDays(date));
     }
-
-
     [Fact]
     public void Invalid_IsMonthInHolidaysMonth()
     {
@@ -52,7 +48,7 @@ public class WorkingCalendarAggregateTest
         Assert.False(workingCalendar.IsDateInHolidays(date));
     }
     [Fact]
-    public void valid_IsBeforDaysInHoliday()
+    public void valid_IsBeforeDaysInHoliday()
     {
         // set HolidaysMonth
         WorkingCalendar workingCalendar = new WorkingCalendarBuilder()
