@@ -23,7 +23,6 @@ global using Fintranet.BuildingBlocks.Common.Infrastructure.ErrorHandler.Excepti
 global using Fintranet.Services.CongestionTax.Infrastructure.Exceptions;
 global using Fintranet.Services.CongestionTax.Domain.CityAggregate;
 global using Microsoft.EntityFrameworkCore.Metadata.Builders;
-global using Fintranet.Services.CongestionTax.Infrastructure.VehicleAggregate;
 global using Fintranet.Services.CongestionTax.Infrastructure.EntityConfigurations;
 global using Fintranet.BuildingBlocks.Common.SharedKernel.Extensions;
 global using Fintranet.Services.CongestionTax.Domain.VehicleAggregate;

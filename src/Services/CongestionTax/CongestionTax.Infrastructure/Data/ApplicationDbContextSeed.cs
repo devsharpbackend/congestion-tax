@@ -1,6 +1,4 @@
 
-using Fintranet.Services.CongestionTax.Infrastructure.VehicleAggregate;
-
 namespace Fintranet.Services.CongestionTax.Infrastructure.Factories;
 
 public class ApplicationDbContextSeed : IApplicationDbContextSeed

@@ -1,4 +1,4 @@
-namespace Fintranet.Services.CongestionTax.Infrastructure.VehicleAggregate;
+namespace Fintranet.Services.CongestionTax.Domain.VehicleAggregate;
 
 public class Vehicle : Entity, IAggregateRoot
 {
