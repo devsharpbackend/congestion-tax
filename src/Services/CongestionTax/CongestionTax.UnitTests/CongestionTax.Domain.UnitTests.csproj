@@ -19,11 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Application\" />
-    <Folder Include="Domain\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CongestionTax.Application\CongestionTax.Application.csproj" />
     <ProjectReference Include="..\CongestionTax.Contracts\CongestionTax.Contracts.csproj" />
     <ProjectReference Include="..\CongestionTax.Domain\CongestionTax.Domain.csproj" />
