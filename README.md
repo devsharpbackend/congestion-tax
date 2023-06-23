@@ -13,7 +13,10 @@ All concerns such as error handling, logging management, transaction management,
 
 Since all business rules have been implemented independently in the Domain layer, a project named "CongestionTax.Domain.UnitTests" has been created to test this layer. It tests all the main functionalities in Aggregates and Domain Services.
 
+ In order to maintain clean code, numerous Building Blocks have been created, which have resulted in code cleanliness.
+
 Execution:
+
 To execute, you need to have SQL Server installed and set the password for the "sa" user as "12312". Then run the project, and the migrations will be performed automatically.
 
 
