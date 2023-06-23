@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{86
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CongestionTax", "CongestionTax", "{E183791D-9FEC-4DA3-BBB4-FBDC595F69B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CongestionTax.API", "Services\CongestionTax\CongestionTax.API\CongestionTax.API.csproj", "{5D2D3190-08F4-4ED8-AD08-059E1AA9C0DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CongestionTax.API", "Services\CongestionTax\CongestionTax.API\CongestionTax.API.csproj", "{5D2D3190-08F4-4ED8-AD08-059E1AA9C0DA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{B5A2FDA2-A975-4968-A3F7-0EC95791A21B}"
 EndProject
@@ -43,15 +43,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Infrastructure.Host"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Infrastructure.Logging", "BuildingBlocks\Infrastructure\Logining\Common.Logging\Common.Infrastructure.Logging.csproj", "{7E8711F3-D6F8-453D-9C47-99132369A363}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CongestionTax.Domain", "Services\CongestionTax\CongestionTax.Domain\CongestionTax.Domain.csproj", "{5BA8F0CA-03DF-46EC-B2EA-36B3F86AEEA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CongestionTax.Domain", "Services\CongestionTax\CongestionTax.Domain\CongestionTax.Domain.csproj", "{5BA8F0CA-03DF-46EC-B2EA-36B3F86AEEA0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{CB715398-E45A-4C1C-90E6-A22B9ABADAB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CongestionTax.Infrastructure", "Services\CongestionTax\CongestionTax.Infrastructure\CongestionTax.Infrastructure.csproj", "{3F03A4EB-6F73-4570-9557-6D7B9760AE6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CongestionTax.Infrastructure", "Services\CongestionTax\CongestionTax.Infrastructure\CongestionTax.Infrastructure.csproj", "{3F03A4EB-6F73-4570-9557-6D7B9760AE6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CongestionTax.Contracts", "Services\CongestionTax\CongestionTax.Contracts\CongestionTax.Contracts.csproj", "{13D86487-D654-4C7F-9DB0-CFA93BA96C62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CongestionTax.Contracts", "Services\CongestionTax\CongestionTax.Contracts\CongestionTax.Contracts.csproj", "{13D86487-D654-4C7F-9DB0-CFA93BA96C62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CongestionTax.Application", "Services\CongestionTax\CongestionTax.Application\CongestionTax.Application.csproj", "{7ECC6270-DC2A-48D3-BF21-F79FBD5CB616}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CongestionTax.Application", "Services\CongestionTax\CongestionTax.Application\CongestionTax.Application.csproj", "{7ECC6270-DC2A-48D3-BF21-F79FBD5CB616}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CongestionTax.UnitTests", "Services\CongestionTax\CongestionTax.UnitTests\CongestionTax.UnitTests.csproj", "{AFAF0B1B-92AA-4F80-9B2F-8F661DECB7F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -107,6 +109,10 @@ Global
 		{7ECC6270-DC2A-48D3-BF21-F79FBD5CB616}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7ECC6270-DC2A-48D3-BF21-F79FBD5CB616}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7ECC6270-DC2A-48D3-BF21-F79FBD5CB616}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFAF0B1B-92AA-4F80-9B2F-8F661DECB7F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFAF0B1B-92AA-4F80-9B2F-8F661DECB7F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFAF0B1B-92AA-4F80-9B2F-8F661DECB7F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFAF0B1B-92AA-4F80-9B2F-8F661DECB7F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -136,6 +142,7 @@ Global
 		{3F03A4EB-6F73-4570-9557-6D7B9760AE6E} = {E183791D-9FEC-4DA3-BBB4-FBDC595F69B0}
 		{13D86487-D654-4C7F-9DB0-CFA93BA96C62} = {E183791D-9FEC-4DA3-BBB4-FBDC595F69B0}
 		{7ECC6270-DC2A-48D3-BF21-F79FBD5CB616} = {E183791D-9FEC-4DA3-BBB4-FBDC595F69B0}
+		{AFAF0B1B-92AA-4F80-9B2F-8F661DECB7F9} = {CB715398-E45A-4C1C-90E6-A22B9ABADAB7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B9AA45FF-575D-4584-914E-052D90E391DD}
