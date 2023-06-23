@@ -8,6 +8,8 @@ In the Domain layer, we have segregated the domains using the Aggregate Pattern.
 Furthermore, all the necessary validations have been implemented in the Domain layer (in addition to the Application layer). The algorithm calculation is performed by a Domain Service called "CongestionTaxCalculatorService." Any validation error in this layer will result in throwing a CongestionTaxDomainException.
 
 In the Infrastructure layer, all database management operations and Repositories have been implemented.
+also, All the basic information to calculate the information of vehicles, city and work calendar... in the form of seed data
+In the ApplicationDbContextSeed class . It is located in the infrastrucure layer
 
 All concerns such as error handling, logging management, transaction management, and validation management are implemented using CQRS Behaviors. It's worth mentioning that logs are managed by the Serilog tool and stored in a table called "LogEvents" in the database.
 
